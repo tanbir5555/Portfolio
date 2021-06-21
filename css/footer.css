@@ -1,0 +1,21 @@
+  #scroll_top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: rgb(235, 0, 0);
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+            }
+    
+            footer {
+                width: 100%;
+                background-color: #1A213B;
+                margin-top: 3rem;
+            }
+    
+            .area_footer {
+                padding: 1.3rem 0rem;
+                text-align: center;
+                color: rgb(240, 240, 240)
+            }

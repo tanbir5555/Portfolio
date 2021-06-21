@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border:0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .d-none{position: absolute;}
+        .container{
+            max-width: 1366px;
+            margin:auto;
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+            
+        }
+        @media(max-width:850px){
+            .container{
+            max-width: 850px;
+            margin:auto;
+        }
+        }
+        .area{
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            flex-wrap:wrap;
+            padding:1rem 3rem;
+            border-radius:500px;
+            width: 800px;
+            background-color: #fff;
+            box-shadow:3px 6px 6px rgba(0,0,0,0.14);
+        }
+        svg {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            z-index: 1000;
+            
+        }
+
+        svg circle {
+            height: 100%;
+            width: 100%;
+            stroke: #e6e6e6;
+            stroke-width: 17px;
+            
+	stroke-linecap:round;
+	fill:none;
+	transform: translate(27px,27px);
+  
+        }
+
+        svg circle:nth-child(2) {
+            stroke-dasharray: 440;
+            stroke-dashoffset: 440;
+        }
+
+         svg circle:nth-child(2) {
+            stroke-dashoffset: 44
+                /*calc(440-(440 * 90)  /100  ) !important*/
+            ;
+            stroke: #00ff43;
+        }
+        .card:nth-child(2) svg circle:nth-child(2){
+	stroke-dashoffset:66;
+	stroke:#00a1ff;
+}
+ .html svg circle:nth-child(2){
+	/*stroke-dashoffset:176;*/
+	stroke-dashoffset: 22;
+	-webkit-stroke-dashoffset: calc(440-(440*95)/100);
+	-moz-stroke-dashoffset: calc(440-(440*95)/100);
+    stroke:#00D65D;
+    animation: dash 1s;
+}
+@keyframes dash {
+    0%{
+        stroke-dashoffset: 440;
+	-webkit-stroke-dashoffset: calc(440-(440*0)/100);
+	-moz-stroke-dashoffset: calc(440-(440*0)/100);
+
+    }100%{
+        	stroke-dashoffset: 22;
+	-webkit-stroke-dashoffset: calc(440-(440*60)/100);
+	-moz-stroke-dashoffset: calc(440-(440*60)/100);
+
+    }
+}
+
+
+
+ .javascript svg circle:nth-child(2){
+	/*stroke-dashoffset:176;*/
+	stroke-dashoffset:100;
+	-webkit-stroke-dashoffset: calc(440-(440*75)/100);
+	-moz-stroke-dashoffset: calc(440-(440*75)/100);
+    stroke:#ff04de;
+    animation: dash2 1s;
+}
+@keyframes dash2 {
+    0%{
+         stroke-dashoffset:440;
+	-webkit-stroke-dashoffset: calc(440-(440*0)/100);
+	-moz-stroke-dashoffset: calc(440-(440*0)/100);
+
+    }100%{
+        stroke-dashoffset:100;
+	-webkit-stroke-dashoffset: calc(440-(440*75)/100);
+	-moz-stroke-dashoffset: calc(440-(440*75)/100);
+
+    }
+}
+ .php svg circle:nth-child(2){
+	/*stroke-dashoffset:176;*/
+	stroke-dashoffset:66;
+	-webkit-stroke-dashoffset: calc(440-(440*85)/100);
+	-moz-stroke-dashoffset: calc(440-(440*85)/100);
+    stroke:#0471ff;
+    animation: dash3 1s;
+}
+@keyframes dash3 {
+    0%{
+        stroke-dashoffset:440;
+	-webkit-stroke-dashoffset: calc(440-(440*0)/100);
+	-moz-stroke-dashoffset: calc(440-(440*0)/100);
+
+    }100%{
+        stroke-dashoffset:66;
+	-webkit-stroke-dashoffset: calc(440-(440*85)/100);
+	-moz-stroke-dashoffset: calc(440-(440*85)/100);
+
+    }
+}
+
+ .jQuery svg circle:nth-child(2){
+	/*stroke-dashoffset:176;*/
+	stroke-dashoffset:100;
+	-webkit-stroke-dashoffset: calc(440-(440*85)/100);
+	-moz-stroke-dashoffset: calc(440-(440*85)/100);
+    stroke:#ea04ff;
+    animation: dash4 1s;
+}
+@keyframes dash4 {
+    0%{
+        stroke-dashoffset:440;
+	-webkit-stroke-dashoffset: calc(440-(440*0)/100);
+	-moz-stroke-dashoffset: calc(440-(440*0)/100);
+
+    }100%{
+        stroke-dashoffset:100;
+	-webkit-stroke-dashoffset: calc(440-(440*75)/100);
+	-moz-stroke-dashoffset: calc(440-(440*75)/100);
+
+    }
+}
+
+.area_in{
+    position: relative;
+
+}
+.html .inner_text{
+    position: absolute;
+    top: 89px;
+    left: 61px;
+}
+.javascript .inner_text{
+    position: absolute;
+    top: 84px;
+    left: 63px;
+}
+.php .inner_text{
+    position: absolute;
+        top: 76px;
+    left: 85px;
+}
+.jQuery .inner_text{
+    position: absolute;
+   top: 82px;
+    left: 43px;
+    font-size: 0.9rem;
+}
+.header_in{
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+}
+.number_persent{
+    font-weight: 600;
+    font-style: italic;
+    text-align:center
+}
+    </style>
+</head>
+
+<body>
+    <svg class="d-none">
+        <filter id="inset-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feComponentTransfer in=SourceAlpha>
+                <feFuncA type="table" tableValues="1 0" />
+            </feComponentTransfer>
+            <feGaussianBlur stdDeviation="3" />
+            <feOffset dx="0" dy="0" result="offsetblur" />
+            <feFlood flood-color="rgba(0, 0, 0,0.40)" result="color" />
+            <feComposite in2="offsetblur" operator="in" />
+            <feComposite in2="SourceAlpha" operator="in" />
+            <feMerge>
+                <feMergeNode in="SourceGraphic" />
+                <feMergeNode />
+            </feMerge>
+        </filter>
+    </svg>
+   <div class="container flex">
+       <div class="area">
+            <div class="area_in html">
+                <svg>
+                    
+                    <circle cx="70" cy="70" r="70px" filter="url(#inset-shadow)"></circle>
+                    <circle cx="70" cy="70" r="70px"></circle>
+                
+                </svg>
+                <div class="inner_text">
+                    <div class="header_in">Html & Css</div>
+                    <div class="number_persent"><span class="count">95</span>%</div>
+                </div>
+            </div>
+            <div class="area_in javascript">
+                <svg>
+                    <circle cx="70" cy="70" r="70px" filter="url(#inset-shadow)"></circle>
+                    <circle cx="70" cy="70" r="70px"></circle>
+            
+                </svg>
+                <div class="inner_text">
+                    <div class="header_in">Javascript</div>
+                    <div class="number_persent"><span class="count">75</span>%</div>
+                </div>
+            </div>
+            <div class="area_in php">
+                <svg>
+                    <circle cx="70" cy="70" r="70px" filter="url(#inset-shadow)"></circle>
+                    <circle cx="70" cy="70" r="70px"></circle>
+            
+                </svg>
+                <div class="inner_text">
+                    <div class="header_in">Php</div>
+                    <div class="number_persent"><span class="count">85</span>%</div>
+                </div>
+            </div>
+        <div class="area_in jQuery">
+            <svg>
+                <circle cx="70" cy="70" r="70px" filter="url(#inset-shadow)"></circle>
+                <circle cx="70" cy="70" r="70px"></circle>
+        
+            </svg>
+            <div class="inner_text">
+                <div class="header_in">jQuery & plugins</div>
+                <div class="number_persent"><span class="count">75</span>%</div>
+            </div>
+        </div>
+       </div>
+   </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="jq/jquery/jquery.min.js"></script>
+<script src="jq/counterup/jquery.counterup.js"></script>
+
+<script src="jq/counterup/jquery.waypoints.min.js"></script>
+   <script>
+         $('.count').counterUp({
+                delay: 10,
+                time: 1000
+            })
+   </script>
+</body>
+
+</html>
